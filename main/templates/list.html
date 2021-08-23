@@ -1,0 +1,14 @@
+{% extends "./base.html"%}
+{%block content%}
+<h1>{{ls.name}}</h1>
+<ul>
+
+    {% for item in ls.item_set.all %}
+        {% if item.complete %}
+            <li>{{item.text}} - COMPLETED</li>
+        {% else %}
+            <li>{{item.text}} - INCOMPLETE</li>
+        {% endif %}
+    {% endfor %}
+</ul>
+{%endblock%}
